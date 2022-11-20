@@ -1,3 +1,3 @@
 # PO-Practice
 
-ReadMe WIP
+ReadMe W.I.P.
