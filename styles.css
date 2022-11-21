@@ -184,6 +184,8 @@ button:hover
 {
 	margin-bottom: 3px;
 	
+	cursor: pointer;
+	
 	transition: .3s ease-out;
 	
 }
