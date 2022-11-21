@@ -123,7 +123,7 @@ function gameOver()
 	IO.style.visibility = "hidden";
 	//state.style.visibility = "hidden";
 	//gameOverElement.style.visibility = "visible";
-	setState("Congratulations! You reached the end of the debate.");
+	setState("Congratulations! You reached the end of the debate! Your final score was " + score " points!");
 }
 // Initalization functions
 function generateSpeeches (topics)
