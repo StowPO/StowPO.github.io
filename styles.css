@@ -38,7 +38,9 @@ th {
 	border-radius: 10px;
 	border: 2px solid var(--dark-liver);
 
-    cursor: pointer;
+    	
+	
+	curosr: pointer;
 
 	transition: border .1s ease;
 	
