@@ -38,8 +38,9 @@ th {
 	border-radius: 10px;
 	border: 2px solid var(--dark-liver);
 
-	transition: border .1s ease;
+    cursor: pointer;
 
+	transition: border .1s ease;
 	
 }
 th:hover
