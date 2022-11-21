@@ -139,7 +139,7 @@ button:hover
 	transition: all 1s;
 }
 
-@keyframes scoreAnim
+@keyframes scoreCorrect
 {
 	50%
 	{
@@ -149,6 +149,17 @@ button:hover
 	{
 		transform: scale(1);
 	}
+}
+@keyframes scoreWrong
+{
+    0%
+    {
+        color: var(--cordovan);
+    }
+    100%
+    {
+        color: var(--isabelline);
+    }
 }
 
 #inputDiv
