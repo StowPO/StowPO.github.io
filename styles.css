@@ -78,12 +78,12 @@ button:hover
 {
 	transform: scale(1.1);
 }
-#gameOver
+/*#gameOver
 {
 	visibility: hidden;
 
 	color: var(--eerie-black);
-}
+}*/
 #IODiv
 {
 	visibility: hidden;
@@ -155,7 +155,7 @@ button:hover
 {
 	width: 30%;
 
-	margin-top: 20px;
+	margin-top: 25px;
 	margin-left: auto;
 	margin-right: auto;
 
