@@ -1,7 +1,7 @@
 var competitors = [];
 var tableObjects = [];
 
-const TOPICS_NUM = 7;
+var topicsNum = 7;
 const speechPercent = 0.8;
 
 var PRSpeeches = [[]];
@@ -27,9 +27,14 @@ var score = 0;
 
 function main(event)
 {
+    setTopics();
 	if (competitors.length < 2)
 		return;
-	speechesList = generateSpeeches(TOPICS_NUM);
+    else if (topicsNum % 1 != 0) // topcsNum is a decimal
+        return;
+    else if (topicsNum < 1 || topicsNum > 12)
+        return;
+	speechesList = generateSpeeches(topicsNum);
 	initVisuals();
 	generateTable();
 	generatePR();
@@ -43,7 +48,7 @@ function speechesLoop()
 	{
 		currentTopic++;
 		console.log("The topic is now topic #" + currentTopic);
-		if (currentTopic >= TOPICS_NUM)
+		if (currentTopic >= topicsNum)
 		{
 			gameOver();
 		}
@@ -612,6 +617,7 @@ document.getElementById("initialInput").onkeypress = function(e){
 }
 
 var inputList = document.getElementById("inputList");
+var topicsInput = document.getElementById("topicsInput");
 
 function addElement(event)
 {
@@ -675,4 +681,10 @@ function removeElement(event)
 
 	updateList();
 	
+}
+function setTopics()
+{
+    var input = topicsInput.value;
+
+    topicsNum = input;
 }
