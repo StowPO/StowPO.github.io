@@ -354,13 +354,24 @@ function endTimer()
 }
 function correctAnswer()
 {
+    scoreBoard.style.animation = "scoreCorrect .25s ease-in";
+	setTimeout(() => {
+		scoreBoard.style.animation = "";
+	}, (250));
+
     showMessage(correct + " is correct!");
     updateScore(endTimer());
+    
 }
 
 const POINT_PENALTY = -1000;
 function wrongAnswer()
 {
+    scoreBoard.style.animation = "scoreWrong .25s ease-in";
+	setTimeout(() => {
+		scoreBoard.style.animation = "";
+	}, (250));
+
     endTimer();
     if (attemptAnswer === undefined)
     {
@@ -383,10 +394,7 @@ function updateScore(newPoints)
     }
 	score += newPoints;
 	scoreBoard.innerText = SCORE_FORMAT + score;
-	scoreBoard.style.animation = "scoreAnim .25s ease-in";
-	setTimeout(() => {
-		scoreBoard.style.animation = "";
-	}, (250));
+	
 }
 function initVisuals()
 {
