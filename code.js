@@ -115,11 +115,12 @@ function onButtonClick(name)
 const IO = document.getElementById("IODiv");
 function gameOver()
 {
-	const gameOverElement = document.getElementById("gameOver");
+	//const gameOverElement = document.getElementById("gameOver");
 	table.style.visibility = "hidden";
-	state.style.visibility = "hidden";
 	IO.style.visibility = "hidden";
-	gameOverElement.style.visibility = "visible";
+	//state.style.visibility = "hidden";
+	//gameOverElement.style.visibility = "visible";
+	setState("Congratulations! You reached the end of the debate.");
 }
 // Initalization functions
 function generateSpeeches (topics)
