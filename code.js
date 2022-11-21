@@ -9,6 +9,7 @@ var PRQuestions = [[]];
 
 var currentTopic = 0;
 var correct;
+var attemptAnswer;
 var speechesList;
 // [topic][competitor][isPrepped, sidePrepped (true = aff, false = neg)]
 
@@ -85,6 +86,7 @@ function speechesLoop()
 	var speakers = randomSpeakers(currentTopic);
 	correct = findCorrectPR(speakers, PRSpeeches);
 	highlightSpeakers(speakers);
+    startTimer();
 }
 function questionsLoop()
 {
@@ -98,6 +100,7 @@ function questionsLoop()
 	var questioners = randomQuestioners();
 	correct = findCorrectPR(questioners, PRQuestions);
 	highlightSpeakers(questioners);
+    startTimer();
 }
 function onButtonClick(name)
 {
@@ -321,9 +324,64 @@ function setState(message)
 	state.innerText = message;
 }
 const SCORE_FORMAT = "Score ";
-function updateScore()
+
+var start;
+var end;
+var timeout;
+function startTimer()
 {
-	score++;
+    start = Date.now();
+
+    timeout = setTimeout(() => {
+        wrongAnswer();
+    }, "10000");
+}
+function endTimer()
+{
+    var result;
+    end = Date.now();
+
+    clearTimeout(timeout);
+
+    result = Math.floor(1000 - ((end - start) / 10));
+
+    start = 0;
+    end = 0;
+    timeout = 0;
+
+    return result;
+
+}
+function correctAnswer()
+{
+    showMessage(correct + " is correct!");
+    updateScore(endTimer());
+}
+
+const POINT_PENALTY = -1000;
+function wrongAnswer()
+{
+    endTimer();
+    if (attemptAnswer === undefined)
+    {
+        showMessage("Time is up. The answer was " + correct + ".");
+        updateScore(POINT_PENALTY);
+        return;
+    }
+    showMessage(attemptAnswer + " is not correct. The answer should be " + correct + ".");
+    updateScore(POINT_PENALTY);
+}
+function updateScore(newPoints)
+{
+    if (speechesOrQuestions)
+    {
+        questionAnswered();
+    }
+    else
+    {
+        speechAnswered();
+    }
+	score += newPoints;
 	scoreBoard.innerText = SCORE_FORMAT + score;
 	scoreBoard.style.animation = "scoreAnim .25s ease-in";
 	setTimeout(() => {
@@ -439,34 +497,35 @@ function updateCompetitorSpeeches(name, topic)
 // Check functions
 function checkAnswerForSpeech(name)
 {
+
+    attemptAnswer = name;
+
 	if (correct != name)
 	{
-		showMessage(name + " is not correct. The answer should be " + correct + ".");
+        wrongAnswer();
 	}
 	else
 	{
-		updateScore();
-		showMessage(name + " is correct!");
+		correctAnswer();
 	}
-	
-	PRSpeeches = updatePR(PRSpeeches)
-	
-	updateCompetitorSpeeches(correct, currentTopic);
-	
-	speaker = correct;
-	questionsLoop();
+
+    attemptAnswer = undefined;
 }
 function checkAnswerForQuestions(name)
 {
+
+    attemptAnswer = name;
+
 	if (correct != name)
 	{
-		showMessage(name + " is not correct. The answer should be " + correct + ".");
+        wrongAnswer();
 	}
 	else
 	{
-		updateScore();
-		showMessage(name + " is correct!");
+        correctAnswer();
 	}
+
+    attemptAnswer = undefined;
 	/*var row = 0;
 	for (var i = 0; i < PRQuestions.length; i++)
 	{
@@ -493,8 +552,21 @@ function checkAnswerForQuestions(name)
 	PRQuestions[row + 1].push(correct);
 	//console.log(PRQuestions);
 	*/
+		
 	
-	PRQuestions = updatePR(PRQuestions);
+}
+function speechAnswered()
+{
+    PRSpeeches = updatePR(PRSpeeches)
+	
+	updateCompetitorSpeeches(correct, currentTopic);
+	
+	speaker = correct;
+	questionsLoop();
+}
+function questionAnswered()
+{
+    PRQuestions = updatePR(PRQuestions);
 	
 	if (qBlocksGoneThru >= qBlockLength)
 	{
@@ -506,9 +578,8 @@ function checkAnswerForQuestions(name)
 	{
 		questionsLoop();
 	}
-		
-	
 }
+
 function checkTopicForSpeakers(topic)
 {
 	var result = false;
