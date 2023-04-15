@@ -189,6 +189,21 @@ let achievements = [
 		"Body": "Watch Code Geass.",
 		"Points": 1,
 	},
+	{
+		"Title": "Lukas's Favorite Anime",
+		"Body": "Watch Neon Genesis Evangellion.",
+		"Points": 1,
+	},
+	{
+		"Title": "Kristian's Favorite Anime",
+		"Body": "Watch Toradora.",
+		"Points": 1,
+	},
+	{
+		"Title": "Andrew's Favorite Anime",
+		"Body": "Watch Maquia: When the Promised Flower Blooms.",
+		"Points": 1,
+	},
 ];
 
 /*
@@ -294,9 +309,11 @@ let competitors = [
 		"Name": "Lukas",
 		"Completed": [
 			"Baby Steps",
+			"Trauma",
 			"There are Champions Among Us",
 			"The Wizard of OSDA",
 			"Precedence and Recency",
+			"Docket and Loaded",
 			"Friend of Debate",
 		],
 		"Points": 0,
