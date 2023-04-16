@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Skill Tree | Stow Congress</title>
+		<link rel="stylesheet" href="./skilltree.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="icon" href="./gavel.ico" type="image/x-icon">
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1><a href="../index.html">Stow Congress</a></h1>
+				<h2>Skill Tree</h2>
+			</header>
+			<section>
+				<select name="sign-in" id="sign-in">
+					<option value="Andrew">Andrew</option>
+					<option value="Bandrew">Bandrew</option>
+					<option value="Chad">Chad</option>
+					<option value="Griffin">Griffin</option>
+					<option value="Jacob">Jacob</option>
+					<option value="Jenny">Jenny</option>
+					<option value="Kristian">Kristian</option>
+					<option value="Lukas">Lukas</option>
+					<option value="Nadia">Nadia</option>
+					<option value="Nathan">Nathan</option>
+				</select>
+				<button id="sign-in-button" onclick="signIn();">Sign In</button>
+			</section>
+			<article id="main-section">
+				<section id="level-menu">
+					<h2 id="level">Level: 1</h2>
+					
+					<div class="w3-container">
+						<div class="w3-light-grey w3-xxlarge w3-round-xlarge" id="experienceBar">
+							<div class="w3-container w3-round-xlarge" style="width:50%; background-color: #001C55; color: white; white-space: nowrap" id="experience"></div>
+						</div>
+					</div>
+					<p id="streak">Streak: 5 days (5% exp bonus)</p>
+				</section>
+				<section id="skillInfo">
+					<h1 id="skillTitle">Speaking</h1>
+					<h3 id="skillLevel">0/2295</h3>
+					<p id="skillBody">Arguably the most important tool in a competitor's arsenal, a wise competitor does not take speaking lightly. This is a parent stat that can be boosted by developing the other speaking skills as well as through miscellaneous practice.</p>
+					
+				</section>
+				<section>
+					<div class="treeSection">
+						<h3>Speaking</h3>
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Speaking">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection" id="Tone">
+							<img src="./icons/fire.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Breathing">
+							<img src="./icons/air.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Memorization">
+							<img src="./icons/brain.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection" id="Hand Gestures">
+							<img src="./icons/hand.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Projection">
+							<img src="./icons/presentation.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Eye Contact">
+							<img src="./icons/eye.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection" id="Body Language">
+							<img src="./icons/person.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Diction">
+							<img src="./icons/lips.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Extemporaneous Speaking">
+							<img src="./icons/fly.png" class="skillIcon">
+						</div>
+					</div>
+					<div class="treeSection">
+						<h3>Debating / Writing</h3>
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Debating">
+							<img src="./icons/debate.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Writing">
+							<img src="./icons/notebook.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection" id="Flow">
+							<img src="./icons/river.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Asking Questions">
+							<img src="./icons/sword.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Researching">
+							<img src="./icons/research.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection" id="Clash">
+							<img src="./icons/clash.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Answering Questions">
+							<img src="./icons/shield.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Argument Strength">
+							<img src="./icons/strength.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection" id="Crystallization">
+							<img src="./icons/crystal.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Writing Style">
+							<img src="./icons/style.png" class="skillIcon">
+						</div>
+						
+					</div>
+					<div class="treeSection">
+						<h3>Presiding</h3>
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Presiding">
+							<img src="./icons/gavel.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection" id="Precedence and Recency">
+							<img src="./icons/notebook.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Procedure">
+							<img src="./icons/procedure.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Presentation">
+							<img src="./icons/presentation.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection" id="Memorizing Precedence and Recency">
+							<img src="./icons/brain.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Gimmicks">
+							<img src="./icons/gimmick.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection" id="Elections">
+							<img src="./icons/election.png" class="skillIcon">
+						</div>
+						
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+						<div class="treeSection subSection hidden">
+							<img src="./icons/microphone.png" class="skillIcon">
+						</div>
+					</div>
+				</section>
+				
+			</article>
+			
+		</main>
+		<script src="skilltree.js"></script>
+	</body>
+</html>
